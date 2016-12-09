@@ -1,0 +1,19 @@
+padre(cesar, dulce).
+padre(cesar, rocio).
+padre(cesar, barakel).
+padre(cesar, lucy).
+padre(cesar, pedro).
+
+padre(cesar, gerardo).
+padre(cesar, cesar).
+padre(cesar, dulece).
+
+abuelo(X,Y):-padre(X,Z), padre(Z,Y).
+hermano(X,Y):-padre(X,Z), padre(Z,Y).
+tio(X,Z):-hermano(X,Y), padre(Y,Z).
+
+imprimir_lista([C|R]) :- write(C), imprimir_lista(R).
+imprimir_lista([]).
+
+
+
